@@ -38,26 +38,36 @@ def exists(path):
     return op.isfile(path) or op.isdir(path) or op.islink(path)
 
 # tested
-def create_symlink(element):
+def create_symlink(element, verbose=True):
     src = os.path.join(THISDIR, element)
     dest = os.path.join(HOMEDIR, element)
-    print("element:", element, os.path.exists(src))
-    print("dest:", dest, os.path.exists(dest), os.path.islink(dest))
+    if verbose:
+        print("element:", element, os.path.exists(src))
+        print("dest:", dest, os.path.exists(dest), os.path.islink(dest))
     if os.path.exists(src) and not os.path.islink(dest):
         is_dir = os.path.isdir(element)
         os.symlink(src, dest, target_is_directory=is_dir)
 
+#TODO
+def find_unmanaged_elements(elements:List):
+    return []
 
 if __name__ == '__main__':
     filepaths = sys.argv[1:]
+
     print('filepaths to handle:')
     print('\n'.join([f'- {fp}' for fp in filepaths]))
+
     print('config file content:')
     elements = parse_config_file()
     print('\n'.join([f'- {fp}' for fp in elements]))
-    # for each element in config file:
+
+    print("checking for new additions in the config file")
+
+    print("creating symlinks")
     for element in elements:
         create_symlink(element)
+
 
 
 
