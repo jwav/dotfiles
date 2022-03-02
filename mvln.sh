@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 for item in $*; do
     if test ! -f $item; then
