@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 echo This script creates symlinks in $HOME to local dotfiles passed as arguments
 
