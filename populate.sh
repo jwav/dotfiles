@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 echo This script creates symlinks in $HOME to local dotfiles passed as arguments
 
@@ -25,15 +25,14 @@ for item in $*; do
             [Yy]* )
                 echo Force-creating symlink for $folder/$filename at $HOME/$filename
                 ln -sf $PWD/$filename $HOME/$filename
-                break;;
+                continue;;
             [Nn]* ) 
                 echo Leaving $HOME/$filename alone...
                 continue;;
             * )
-                echo "Please answer y or n."
                 echo Force-creating symlink for $folder/$filename at $HOME/$filename
                 ln -sf $PWD/$filename $HOME/$filename
-                break;;
+                continue;;
 
 
             esac
