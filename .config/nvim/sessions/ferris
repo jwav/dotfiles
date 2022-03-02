@@ -1,0 +1,254 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/keymaps/ferris_jwav
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +47 my_combos.h
+badd +49 config.h
+badd +1 promicro_flash.sh
+badd +5 flash.sh
+badd +1 sweep.c
+badd +1 sweep.h
+badd +0 term://~/keymaps/ferris_jwav//5384:/usr/bin/zsh
+badd +0 term://~/keymaps/ferris_jwav//5423:/usr/bin/zsh
+badd +0 rules.mk
+badd +0 term://~/keymaps/ferris_jwav//15276:/usr/bin/zsh
+argglobal
+%argdel
+$argadd config.h
+tabnew
+tabrewind
+edit rules.mk
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+wincmd _ | wincmd |
+split
+wincmd _ | wincmd |
+split
+3wincmd k
+wincmd w
+wincmd w
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 13 + 28) / 56)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
+exe '2resize ' . ((&lines * 13 + 28) / 56)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
+exe '3resize ' . ((&lines * 13 + 28) / 56)
+exe 'vert 3resize ' . ((&columns * 106 + 106) / 213)
+exe '4resize ' . ((&lines * 10 + 28) / 56)
+exe 'vert 4resize ' . ((&columns * 106 + 106) / 213)
+exe '5resize ' . ((&lines * 27 + 28) / 56)
+exe 'vert 5resize ' . ((&columns * 106 + 106) / 213)
+exe '6resize ' . ((&lines * 24 + 28) / 56)
+exe 'vert 6resize ' . ((&columns * 106 + 106) / 213)
+argglobal
+if bufexists("term://~/keymaps/ferris_jwav//5423:/usr/bin/zsh") | buffer term://~/keymaps/ferris_jwav//5423:/usr/bin/zsh | else | edit term://~/keymaps/ferris_jwav//5423:/usr/bin/zsh | endif
+if &buftype ==# 'terminal'
+  silent file term://~/keymaps/ferris_jwav//5423:/usr/bin/zsh
+endif
+balt flash.sh
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+let s:l = 1669 - ((12 * winheight(0) + 6) / 13)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1669
+normal! 016|
+lcd ~/keymaps/ferris_jwav
+wincmd w
+argglobal
+balt ~/keymaps/ferris_jwav/flash.sh
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 22 - ((11 * winheight(0) + 6) / 13)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 22
+normal! 0
+lcd ~/keymaps/ferris_jwav
+wincmd w
+argglobal
+if bufexists("~/keymaps/ferris_jwav/promicro_flash.sh") | buffer ~/keymaps/ferris_jwav/promicro_flash.sh | else | edit ~/keymaps/ferris_jwav/promicro_flash.sh | endif
+if &buftype ==# 'terminal'
+  silent file ~/keymaps/ferris_jwav/promicro_flash.sh
+endif
+balt ~/keymaps/ferris_jwav/flash.sh
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 8 - ((7 * winheight(0) + 6) / 13)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 8
+normal! 0
+lcd ~/keymaps/ferris_jwav
+wincmd w
+argglobal
+if bufexists("~/keymaps/ferris_jwav/flash.sh") | buffer ~/keymaps/ferris_jwav/flash.sh | else | edit ~/keymaps/ferris_jwav/flash.sh | endif
+if &buftype ==# 'terminal'
+  silent file ~/keymaps/ferris_jwav/flash.sh
+endif
+balt ~/keymaps/ferris_jwav/promicro_flash.sh
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 5 - ((4 * winheight(0) + 5) / 10)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 5
+normal! 06|
+lcd ~/keymaps/ferris_jwav
+wincmd w
+argglobal
+if bufexists("~/keymaps/ferris_jwav/config.h") | buffer ~/keymaps/ferris_jwav/config.h | else | edit ~/keymaps/ferris_jwav/config.h | endif
+if &buftype ==# 'terminal'
+  silent file ~/keymaps/ferris_jwav/config.h
+endif
+balt ~/keymaps/ferris_jwav/my_combos.h
+setlocal fdm=syntax
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=1
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+let s:l = 53 - ((25 * winheight(0) + 13) / 27)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 53
+normal! 031|
+lcd ~/keymaps/ferris_jwav
+wincmd w
+argglobal
+if bufexists("~/keymaps/ferris_jwav/my_combos.h") | buffer ~/keymaps/ferris_jwav/my_combos.h | else | edit ~/keymaps/ferris_jwav/my_combos.h | endif
+if &buftype ==# 'terminal'
+  silent file ~/keymaps/ferris_jwav/my_combos.h
+endif
+balt ~/keymaps/ferris_jwav/config.h
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 47 - ((11 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 47
+normal! 0
+lcd ~/keymaps/ferris_jwav
+wincmd w
+6wincmd w
+exe '1resize ' . ((&lines * 13 + 28) / 56)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
+exe '2resize ' . ((&lines * 13 + 28) / 56)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
+exe '3resize ' . ((&lines * 13 + 28) / 56)
+exe 'vert 3resize ' . ((&columns * 106 + 106) / 213)
+exe '4resize ' . ((&lines * 10 + 28) / 56)
+exe 'vert 4resize ' . ((&columns * 106 + 106) / 213)
+exe '5resize ' . ((&lines * 27 + 28) / 56)
+exe 'vert 5resize ' . ((&columns * 106 + 106) / 213)
+exe '6resize ' . ((&lines * 24 + 28) / 56)
+exe 'vert 6resize ' . ((&columns * 106 + 106) / 213)
+tabnext
+argglobal
+if bufexists("term://~/keymaps/ferris_jwav//15276:/usr/bin/zsh") | buffer term://~/keymaps/ferris_jwav//15276:/usr/bin/zsh | else | edit term://~/keymaps/ferris_jwav//15276:/usr/bin/zsh | endif
+if &buftype ==# 'terminal'
+  silent file term://~/keymaps/ferris_jwav//15276:/usr/bin/zsh
+endif
+balt term://~/keymaps/ferris_jwav//15276:/usr/bin/zsh
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+let s:l = 345 - ((53 * winheight(0) + 27) / 54)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 345
+normal! 015|
+lcd ~/keymaps/ferris_jwav
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToOFI
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

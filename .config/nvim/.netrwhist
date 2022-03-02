@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/vee/.config/nvim/plugged/onedark.nvim/lua/onedark'
+let g:netrw_dirhist_1='/home/vee/.config/nvim/plugged/onedark.nvim/lua'
+let g:netrw_dirhist_0='/home/vee/.config/nvim/plugged/onedark.nvim'
+let g:netrw_dirhist_9='/home/vee/.config/nvim/plugged'
+let g:netrw_dirhist_8='/home/vee/.config/nvim'
+let g:netrw_dirhist_7='/home/vee/dev/freqtrade-strategies/user_data/strategies'
+let g:netrw_dirhist_6='/home/vee/dev/freqtrade-strategies/user_data/strategies/berlinguyinca'
+let g:netrw_dirhist_5='/home/vee/dev/freqtrade-strategies/user_data/strategies'
+let g:netrw_dirhist_4='/home/vee/dev/freqtrade-strategies/user_data'
+let g:netrw_dirhist_3='/home/vee/dev/freqtrade-strategies'
