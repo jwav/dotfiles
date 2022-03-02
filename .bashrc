@@ -125,3 +125,8 @@ if ! shopt -oq posix; then
 fi
 
 source /etc/bash_completion.d/climate_completion
+. "$HOME/.cargo/env"
+
+# prevent screen from ever turning off even if left idle for long periods
+xset s off -dpms
+

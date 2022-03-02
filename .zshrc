@@ -1,3 +1,4 @@
+DISABLE_OH_MY_ZSH=0
 # If you come from bash you might have to change your $PATH.
 export PATH=/root/.local/bin:$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +9,14 @@ export ZSH="/home/vee/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="vee"
+# ZSH_THEME="powerlevel10k"
 ZSH_THEME="vee"
+if [[ "DISABLE_OH_MY_ZSH" == 1 ]];then
+    themepath="$ZSH/themes/$ZSH_THEME.zsh-theme"
+    echo "themepath:" $themepath
+    source $themepath
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -52,7 +60,7 @@ ZSH_THEME="vee"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -70,9 +78,13 @@ ZSH_THEME="vee"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
+plugins=()
 
-source $ZSH/oh-my-zsh.sh
+
+if [[ "DISABLE_OH_MY_ZSH" != 1 ]];then
+    source $ZSH/oh-my-zsh.sh
+fi
 
 # User configuration
 
@@ -109,4 +121,32 @@ asl(){
 }
 # alias acsl='apt-cache search | less'
 # alias asl='apt search | less'
+
+
+# autocompletion for climate, I assume
+source /etc/bash_completion.d/climate_completion
+
+math(){
+    echo -e "print($*)" | python3
+}
+
+mathx(){
+    echo -e "from math import *\nprint($*)" | python3
+}
+
+setpython(){
+    target="/usr/bin/python$1"
+    # echo $target
+    if test -f "$target"; then
+        echo "sudo update-alternatives --set python $target"
+    else
+        echo "usage: setpython <version> (ex: 3.6)"
+    fi
+}
+
+setpython3(){
+    echo "sudo update-alternatives --set python3 /usr/bin/python$1"
+}
+
+vman() { man $* | col -b | nvim -c 'set ft=man nomod nolist' -; }
 
