@@ -8,22 +8,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +141 cointoss.py
-badd +15 ~/.config/nvim/init.vim
-badd +0 ~/.config/nvim/plugins.vim
 argglobal
 %argdel
-$argadd cointoss.py
-edit ~/.config/nvim/plugins.vim
+edit cointoss.py
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
-wincmd _ | wincmd |
-vsplit
-2wincmd h
-wincmd w
+1wincmd h
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -34,13 +27,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 70 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 70 + 106) / 212)
-exe 'vert 3resize ' . ((&columns * 70 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
 argglobal
-enew
-file \[Plugins]
-balt ~/.config/nvim/plugins.vim
+if bufexists("term://~/dev/cointoss//17585:/usr/bin/zsh") | buffer term://~/dev/cointoss//17585:/usr/bin/zsh | else | edit term://~/dev/cointoss//17585:/usr/bin/zsh | endif
+if &buftype ==# 'terminal'
+  silent file term://~/dev/cointoss//17585:/usr/bin/zsh
+endif
+balt cointoss.py
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -49,10 +43,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=1
 setlocal fen
-lcd ~/.config/nvim
+let s:l = 15 - ((14 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 15
+normal! 0
+lcd ~/dev/cointoss
 wincmd w
 argglobal
-balt ~/.config/nvim/init.vim
+balt /usr/lib/python3.9/argparse.py
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -63,40 +63,22 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 46 - ((27 * winheight(0) + 26) / 52)
+let s:l = 243 - ((20 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 46
-normal! 0
-lcd ~/.config/nvim
-wincmd w
-argglobal
-if bufexists("~/dev/cointoss/cointoss.py") | buffer ~/dev/cointoss/cointoss.py | else | edit ~/dev/cointoss/cointoss.py | endif
-if &buftype ==# 'terminal'
-  silent file ~/dev/cointoss/cointoss.py
-endif
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=2
-setlocal fml=1
-setlocal fdn=2
-setlocal fen
-let s:l = 137 - ((47 * winheight(0) + 26) / 52)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 137
-normal! 030|
+keepjumps 243
+normal! 08|
 lcd ~/dev/cointoss
 wincmd w
-exe 'vert 1resize ' . ((&columns * 70 + 106) / 212)
-exe 'vert 2resize ' . ((&columns * 70 + 106) / 212)
-exe 'vert 3resize ' . ((&columns * 70 + 106) / 212)
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
 tabnext 1
-if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0&& getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+badd +243 ~/dev/cointoss/cointoss.py
+badd +3 term://~/dev/cointoss//9606:/usr/bin/zsh
+badd +1709 /usr/lib/python3.9/argparse.py
+badd +0 term://~/dev/cointoss//17585:/usr/bin/zsh
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
@@ -109,7 +91,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

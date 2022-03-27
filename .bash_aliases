@@ -37,4 +37,6 @@ alias doco='docker-compose'
 alias term-cheatsheet='less ~/terminal_cheatsheet.txt'
 alias cpr='cp -R'
 alias dude='du -d 1'
-
+alias cddw='cd ~/Downloads'
+alias cdd='cd ~/Downloads'
+alias c='cd'

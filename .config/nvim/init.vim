@@ -20,6 +20,9 @@ if has('unix')
     " set background=dark
     " source ~/.config/nvim/themes/onedark.vim
     colorscheme monokai
+    TransparentBackground
+    " this enables word navigations within_this_kind_of_name
+    set iskeyword+=_
 
     " Plugin Configuration
     source ~/.config/nvim/plug-config/nerdtree.vim

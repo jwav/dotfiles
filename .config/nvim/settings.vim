@@ -7,8 +7,6 @@ if has('unix')
 elseif has('win32')
     " let g:python3_host_prog = 'python3' " '~\AppData\Local\Microsoft\WindowsApps\python3.exe'
     " let g:python_host_prog = '~\AppData\Local\Microsoft\WindowsApps\python.exe'
-    let g:python3_host_prog = 'C:\Users\jwavresky\scoop\shims\python3.exe'
-    let g:python_host_prog = 'C:\Users\jwavresky\scoop\shims\python.exe'
 endif
 " Enable filetype plugins
 filetype plugin on
@@ -269,4 +267,3 @@ set ffs=unix,dos,mac " Use Unix as the standard file type
 "let &t_EI = '\e[1 q'
 "set guicursor+=n-v-c:blinkon0
 "
-set iskeyword-=_

@@ -164,3 +164,21 @@ function! NumbersAzertyWithShift()
     nnoremap 0 0
 endfunction
 command! NumbersAzertyWithShift call NumbersAzertyWithShift()
+
+" this enables word navigations within_this_kind_of_name
+function! SetUnderscoreAsSeparator()
+    echo '_ is no longer a keyword'
+    set iskeyword-=_
+endfunction
+
+function! UnsetUnderscoreAsSeparator()
+    echo '_ is now a keyword'
+    set iskeyword+=_
+endfunction
+
+" test this sentence_with_underscore 
+
+command! UnderscoreSeparate call SetUnderscoreAsSeparator()
+command! UnderscoreDeseparate call UnsetUnderscoreAsSeparator()
+
+

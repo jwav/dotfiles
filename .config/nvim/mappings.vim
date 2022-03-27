@@ -69,7 +69,7 @@ vnoremap > >gv
 """""""""""""""
 imap <C-BS> <C-w>
 inoremap <c-s> <esc>:w!<cr>a
-inoremap <c-S> <esc>:w!<cr>
+" inoremap <c-S> <esc>:w!<cr>
 
 " In insert or command mode, move normally by using Ctrl
 inoremap <A-h> <Left>
@@ -172,6 +172,7 @@ nnoremap s "_s
 
 nnoremap D "_dd
 nnoremap <leader>dd "_dd
+nnoremap <leader>di "_di
 nnoremap d<space> "_dd
 nnoremap d<backspace> "_dd
 
@@ -234,7 +235,8 @@ nnoremap zm zM
 
 " FZF buffers
 map <leader>bf :Buffers<CR>
-nnoremap <leader>bb :buffers<cr>
+" nnoremap <leader>bb :buffers<cr>
+nnoremap <leader>bb :buffers<cr>:b<space> 
 nnoremap <leader>bd :Bclose<cr>:tabclose<cr>gT
 nnoremap <leader>ba :bufdo bd<cr>
 nnoremap <leader>l :bnext<cr>

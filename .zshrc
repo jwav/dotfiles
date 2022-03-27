@@ -145,8 +145,37 @@ setpython(){
 }
 
 setpython3(){
-    echo "sudo update-alternatives --set python3 /usr/bin/python$1"
+    target="/usr/bin/python$1"
+    # echo "sudo update-alternatives --set python3 /usr/bin/python$1"
+    if test -f "$target"; then
+        echo "sudo update-alternatives --set python3 $target"
+    else
+        echo "usage: setpython <version> (ex: 3.6)"
+    fi
 }
 
 vman() { man $* | col -b | nvim -c 'set ft=man nomod nolist' -; }
 
+# prevent screen from ever turning off even if left idle for long periods
+xset s off -dpms
+
+# fix to avoid the "duplicated first two characters in zsh" bug
+fixlocale(){
+    export LC_ALL=$LANG
+}
+# call it at session start
+fixlocale
+
+# for some reason, it fixes the "git asks me for credentials at every push"
+fixgitcredentials(){
+    ssh-add ~/.ssh/id_rsa &>/dev/null
+}
+
+cl(){
+    if [[ $1 = "--help" ]]; then
+        echo "changes directory then displays its contents"
+        echo "'cl [dir]' resolves as 'cd <dir> && ls'"
+    else
+        cd $1 && ls
+    fi
+}
