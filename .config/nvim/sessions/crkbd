@@ -34,8 +34,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 107 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 213)
 argglobal
 balt ~/dotfiles/.config/nvim/mappings.vim
 setlocal fdm=manual
@@ -48,7 +48,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 60 - ((27 * winheight(0) + 21) / 43)
+let s:l = 60 - ((33 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -72,7 +72,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 21) / 43)
+let s:l = 3 - ((2 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -80,8 +80,8 @@ keepjumps 3
 normal! 0
 lcd ~/keymaps/crkbd_jwav
 wincmd w
-exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 107 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 105 + 106) / 213)
 tabnext
 edit ~/keymaps/crkbd_jwav/foo
 let s:save_splitbelow = &splitbelow
@@ -100,8 +100,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 87 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
 argglobal
 balt ~/keymaps/crkbd_jwav/my_combos.h
 setlocal fdm=manual
@@ -114,7 +114,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 21) / 43)
+let s:l = 1 - ((0 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -138,7 +138,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 212 - ((40 * winheight(0) + 21) / 43)
+let s:l = 212 - ((49 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -146,8 +146,8 @@ keepjumps 212
 normal! 0
 lcd ~/keymaps/crkbd_jwav
 wincmd w
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 87 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
 tabnext
 edit ~/keymaps/crkbd_jwav/crkbd_jwav.json
 argglobal
@@ -162,7 +162,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 38 - ((6 * winheight(0) + 21) / 43)
+let s:l = 38 - ((7 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -183,7 +183,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 149 - ((36 * winheight(0) + 21) / 43)
+let s:l = 149 - ((44 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -208,8 +208,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 87 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
 argglobal
 balt ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h
 setlocal fdm=manual
@@ -222,7 +222,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 31 - ((24 * winheight(0) + 21) / 43)
+let s:l = 31 - ((30 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -246,7 +246,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 21 - ((16 * winheight(0) + 21) / 43)
+let s:l = 21 - ((20 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -254,8 +254,8 @@ keepjumps 21
 normal! 012|
 lcd ~/keymaps/crkbd_jwav
 wincmd w
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 87 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
 tabnext
 edit ~/keymaps/crkbd_jwav/my_combos.h
 let s:save_splitbelow = &splitbelow
@@ -274,8 +274,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 87 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
 argglobal
 balt ~/dotfiles/.config/nvim/mappings.vim
 setlocal fdm=manual
@@ -288,12 +288,12 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 41 - ((11 * winheight(0) + 21) / 43)
+let s:l = 40 - ((13 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 41
-normal! 0
+keepjumps 40
+normal! 025|
 lcd ~/keymaps/crkbd_jwav
 wincmd w
 argglobal
@@ -312,7 +312,7 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 65 - ((28 * winheight(0) + 21) / 43)
+let s:l = 65 - ((35 * winheight(0) + 26) / 53)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -320,8 +320,8 @@ keepjumps 65
 normal! 025|
 lcd ~/keymaps/crkbd_jwav
 wincmd w
-exe 'vert 1resize ' . ((&columns * 86 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 87 + 87) / 174)
+exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
 tabnext 6
 badd +62 ~/keymaps/crkbd_jwav/config.h
 badd +1 ~/keymaps/crkbd_jwav/my_combos.h

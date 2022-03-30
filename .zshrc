@@ -179,3 +179,9 @@ cl(){
         cd $1 && ls
     fi
 }
+
+# auto-load zephyrrc
+if [[ -d ~/.zephyrrc ]]; then
+    source ~/.zephyrrc
+fi
+
