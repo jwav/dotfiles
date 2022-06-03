@@ -109,49 +109,8 @@ exe '2resize ' . ((&lines * 16 + 23) / 47)
 exe 'vert 2resize ' . ((&columns * 105 + 87) / 174)
 exe 'vert 3resize ' . ((&columns * 68 + 87) / 174)
 tabnext
-edit ~/dotfiles/.config/nvim/init.vim
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
+edit ~/dev/picture-tournament/picture-tournament.py
 argglobal
-balt ~/dev/picture-tournament/picture-tournament.py
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 18 - ((15 * winheight(0) + 21) / 43)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 18
-normal! 05|
-wincmd w
-argglobal
-if bufexists("~/dev/picture-tournament/picture-tournament.py") | buffer ~/dev/picture-tournament/picture-tournament.py | else | edit ~/dev/picture-tournament/picture-tournament.py | endif
-if &buftype ==# 'terminal'
-  silent file ~/dev/picture-tournament/picture-tournament.py
-endif
 balt ~/dotfiles/.config/nvim/init.vim
 setlocal fdm=indent
 setlocal fde=0
@@ -174,17 +133,14 @@ normal! zt
 keepjumps 522
 normal! 0
 lcd ~/dev/picture-tournament
-wincmd w
-exe 'vert 1resize ' . ((&columns * 87 + 87) / 174)
-exe 'vert 2resize ' . ((&columns * 86 + 87) / 174)
 tabnext 2
-badd +21 ~/Pictures/my-face-apr-2022/new.ptsave
+badd +1 ~/Pictures/my-face-apr-2022/new.ptsave
 badd +529 ~/dev/picture-tournament/picture-tournament.py
+badd +18 ~/dotfiles/.config/nvim/init.vim
 badd +1 term://~/Pictures/my-face-apr-2022//38218:/usr/bin/zsh
 badd +45 term://~/dev/picture-tournament//29895:/usr/bin/zsh
 badd +1 ~/dotfiles/.config/nvim/mappings.vim
 badd +517 term://~/dev/picture-tournament//8308:/usr/bin/zsh
-badd +26 ~/dotfiles/.config/nvim/init.vim
 badd +1 ~/dev/picture-tournament/__Tagbar__.2
 badd +34 term://~/dev/picture-tournament//21544:/usr/bin/zsh
 badd +1 ~/dev/picture-tournament/.gitignore
@@ -207,7 +163,7 @@ badd +9 ~/dotfiles/.config/nvim/plug-config/sneak.vim
 badd +64 ~/dotfiles/.config/nvim/plug-config/far.vim
 badd +4 ~/dotfiles/.config/nvim/plug-config/quickscope.vim
 badd +52 term://~/dev/picture-tournament//5609:/usr/bin/zsh
-badd +13 ~/dotfiles/.config/nvim/plugins.vim
+badd +212 ~/dotfiles/.config/nvim/plugins.vim
 badd +1 term://~/dev/picture-tournament//7443:/usr/bin/zsh
 badd +2 term://~/dev/picture-tournament//5526:/usr/bin/zsh
 badd +53 term://~/dev/picture-tournament//5571:/usr/bin/zsh
@@ -216,14 +172,13 @@ if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebu
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToOFI
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
