@@ -1,0 +1,53 @@
+début à 14:30
+
+subtilité de la planification pour aujourd'hui:
+La lettre Thalès, qui traîne depuis des semaines, doit être terminée aujourd'hui. Donc j'ai posé 3 créneaux de 20 minutes à répartir sur la session pour éviter le burnout.
+MAIS LA RÈGLE D'AJUI EST LA SUIVANTE: JE NE PARS PAS DE LA BILBIOTHÈQUE AVANT D'AVOIR VALIDÉ CETTE LETTRE.
+
+15 min: courriel agence immobiliere
+    3 min
+
+20 min: lettre Thalès, 1er acte.
+    Très important: à qui j'enverrai ce courriel? Ca conditionne beaucoup les thèmes, l'approche, le ton, etc
+    je devrais appeler pour que quelqu'un me dise qui contacter. Préparer un coup de téléphone, autant que c'est possible? (càd pas beaucoup)
+    purée ils sont durs à contacter je trouve toujours pas d'addresse courriel. Je vais lister ici les moyens de les contacter:
+    - 0 555 928 989
+    - 6 Rue Lt Colonel Laporte, 19100 Brive-la-Gaillarde
+
+    Voici la liste complète des postes à pourvoir sur Brive: https://thales.wd3.myworkdayjobs.com/fr-FR/Careers/jobs?locations=5af4f5cd8760019aa14d7c63372b4a07
+
+    Annonce ingénieur banc de test! https://thales.wd3.myworkdayjobs.com/fr-FR/Careers/job/Brive-la-Gaillarde/Ingnieur-Dveloppement-Bancs-de-tests--H-F-_R0154887-1
+
+    Annonce responsable de projets - solutions de test : https://thales.wd3.myworkdayjobs.com/fr-FR/Careers/job/Brive-la-Gaillarde/Responsable-de-projets---Solutions-de-test--H-F-_R0154885-1
+
+    idées pour trouver des clients et pour le démarcharge en particulier: https://www.shine.fr/blog/comment-trouver-des-clients-en-tant-que-freelance/#:~:text=Linkedin%2C%20Facebook%2C%20Instagram%2C%20Twitter,aux%20entreprises%20comme%20aux%20particuliers.
+    
+    Purée ça y est finalement j'ai un bon courriel! Voir les drafts ou lettre-thales.txt
+
+    temps: 1h47
+
+10 min: trouver comment envoyer courriel à Thales Brive
+    Eh bien apparemment il n'y a simplement pas d'adresse de contact! Je vais creuser mes courriels de 2011
+    valentin.gaudy@thalesgroup.com
+    jean-pierre.murat@thalesgroup.com
+    francoise.labonne@thalesgroup.com : service RH
+    Nope, aucune adresse d'accueil
+
+    ça pourrait servir si un jour je devais contacter directement une personne du site, on peut trouver leurs noms plus facilement que leur accueil je parie.
+    Bon en fait c'est simple, il va falloir appeler
+    25 minutes
+
+17:00 30 min lecture de documents de F Vernadet
+    Rappel de mes notes manuscrites prises lors du rdv avec F Vernadet:
+    - IMPORTANT: utiliser des jalons réguliers par courriel comme preuve de validation par le client.
+    - IMPORTANT: échéances de paiement à mentionner impérativement sur le devis
+    - encart en fin de devis pour renvoyer au cahier des charges -> Le cahier des charges doit être paraphé sur chaque page et signé
+    - indiquer impérativement dans la clause de litige du contrat le tribunal compétent (ex: tribunal de commerce de Brive)
+    - litige pour un préjudice < 4k€: pas de possibilité d'appel. L'affaire est jugée et c'est mar (article 700 du code de procédure civile?)
+    - passer une appel en référé lorsqu'il y a urgence
+
+    45 minutes
+
+
+
+

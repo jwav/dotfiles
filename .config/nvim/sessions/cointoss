@@ -10,6 +10,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
+$argadd cointoss.py
 edit cointoss.py
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
@@ -30,29 +31,7 @@ set winwidth=1
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
 exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
 argglobal
-if bufexists("term://~/dev/cointoss//17585:/usr/bin/zsh") | buffer term://~/dev/cointoss//17585:/usr/bin/zsh | else | edit term://~/dev/cointoss//17585:/usr/bin/zsh | endif
-if &buftype ==# 'terminal'
-  silent file term://~/dev/cointoss//17585:/usr/bin/zsh
-endif
-balt cointoss.py
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-let s:l = 15 - ((14 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 15
-normal! 0
-lcd ~/dev/cointoss
-wincmd w
-argglobal
-balt /usr/lib/python3.9/argparse.py
+balt unittest_cointoss.py
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -63,21 +42,57 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 243 - ((20 * winheight(0) + 26) / 53)
+let s:l = 41 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 243
-normal! 08|
+keepjumps 41
+normal! 0
 lcd ~/dev/cointoss
 wincmd w
+argglobal
+if bufexists("~/dev/vee_utils/cli_params.py") | buffer ~/dev/vee_utils/cli_params.py | else | edit ~/dev/vee_utils/cli_params.py | endif
+if &buftype ==# 'terminal'
+  silent file ~/dev/vee_utils/cli_params.py
+endif
+balt ~/dev/cointoss/unittest_cointoss.py
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 85 - ((49 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 85
+normal! 022|
+lcd ~/dev/vee_utils
+wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
 exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
 tabnext 1
-badd +243 ~/dev/cointoss/cointoss.py
-badd +3 term://~/dev/cointoss//9606:/usr/bin/zsh
-badd +1709 /usr/lib/python3.9/argparse.py
-badd +0 term://~/dev/cointoss//17585:/usr/bin/zsh
+badd +84 ~/dev/vee_utils/cli_params.py
+badd +1 ~/dev/cointoss/unittest_cointoss.py
+badd +86 ~/dev/cointoss/cointoss.py
+badd +11 ~/dev/cointoss/cointoss_unittest.py
+badd +1679 /usr/lib/python3.9/argparse.py
+badd +1 ~/dotfiles/.config/nvim/mappings.vim
+badd +18 ~/dotfiles/.config/nvim/plugins.vim
+badd +39 ~/dotfiles/.config/nvim/init.vim
+badd +34 ~/dotfiles/.config/nvim/plug-config/sneak.vim
+badd +371 /usr/lib/python3.9/inspect.py
+badd +20 term://~/dev/cointoss//6586:/usr/bin/zsh
+badd +62 term://~/dev/cointoss//58497:/usr/bin/zsh
+badd +121 term://~/dev/cointoss//60107:/usr/bin/zsh
+badd +9 term://~/dev/cointoss//61704:/usr/bin/zsh
+badd +39 term://~/dev/cointoss//62292:/usr/bin/zsh
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

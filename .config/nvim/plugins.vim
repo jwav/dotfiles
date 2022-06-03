@@ -9,6 +9,12 @@
 
 call plug#begin()
 
+
+Plug 'bkad/CamelCaseMotion'
+
+
+Plug 'Dimercel/todo-vim'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -16,7 +22,7 @@ Plug 'unblevable/quick-scope'
 Plug 'liuchengxu/vim-which-key'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-
+Plug 'aserebryakov/vim-todo-lists'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'casprwang/vim-git-it'
 
@@ -37,6 +43,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'chaoren/vim-wordmotion'
 Plug 'chrisbra/Colorizer'
 "Plug 'ycm-core/YouCompleteMe'
+
+" Plug 'troydm/zoomwintab'
 
 """""""""""""""
 " COLOR SCHEMES

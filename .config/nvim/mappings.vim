@@ -39,7 +39,7 @@ nnoremap <leader>R :argdo %s/\<<C-r><C-w>\>//gce<Left><Left><Left><Left>
 nnoremap <leader>r :%s/\<<C-r><C-w>\>//gce<Left><Left><Left><Left>
 vnoremap <leader>r :%s/\<<C-r><C-w>\>//gce<Left><Left><Left><Left>
 " Alternate way to save
-nnoremap <C-s> :w<CR>
+nnoremap <c-s> :w<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 " <TAB>: completion.
@@ -67,9 +67,23 @@ vnoremap > >gv
 """""""""""""""
 " insert mode "
 """""""""""""""
-imap <C-BS> <C-w>
+" use ctrl-backspace like a human being
+" so that I stop closing 3 browser tabs
+" when tapping C-w out of habit
+imap <C-BS> <C-w>  " does not work in terminal vim
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+" the quick brown fox jumps over the lazy dog
+" the quick brown fox jumps over the lazy dog
+" the quick brown fox jumps over the lazy dog
+" the quick brown fox jumps over the lazy dog
+" the quick brown x jumps over the lazy dog
+" an even simpler way to define Ctrl-Del 
+imap <C-DEL> <esc>lce
+
 inoremap <c-s> <esc>:w!<cr>a
-" inoremap <c-S> <esc>:w!<cr>
+" inoremap <c-s-s> <esc>:w!<cr>
+" inoremap <C-S> <esc>:w!<cr>
 
 " In insert or command mode, move normally by using Ctrl
 inoremap <A-h> <Left>
@@ -94,6 +108,7 @@ inoremap <A-o> <Esc>
 
 inoremap <A-w> <Esc>:w<CR>a
 inoremap <A-t> `
+inoremap <c-z> <esc>ua
 " inoremap àà <esc>
 " inoremap çà <esc>
 " inoremap àç <esc>
@@ -176,14 +191,14 @@ nnoremap <leader>di "_di
 nnoremap d<space> "_dd
 nnoremap d<backspace> "_dd
 
-nnoremap da d$
+nnoremap dz d$
 nnoremap <leader>da "_d$
 nnoremap de "_de
 nnoremap <leader>de "_de
 
 nnoremap cd "_cc<Esc>
 nnoremap ce "_ce
-nnoremap ca "_c$
+nnoremap cz "_c$
 nnoremap cc "_cc
 nnoremap dx "_dd
 nnoremap dc "_dd
@@ -213,15 +228,27 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
-nnoremap H <C-W>h
-nnoremap L <C-W>l
+" nnoremap gh <C-W>h
+" nnoremap gl <C-W>l
+" nnoremap gj <C-W>j
+" nnoremap gk <C-W>k
+nnoremap <leader>h <C-W>h
+nnoremap <leader>l <C-W>l
+nnoremap <leader>j <C-W>j
+nnoremap <leader>k <C-W>k
+nnoremap <cr>h <C-W>h
+nnoremap <cr>l <C-W>l
+nnoremap <cr>j <C-W>j
+nnoremap <cr>k <C-W>k
+" nnoremap H <C-W>h
+" nnoremap L <C-W>l
 "closing window
 nnoremap <A-x> :q<CR>
 nnoremap <leader>qq :q!<cr>
 nnoremap <leader>qa :qa!<cr>
 
 "folding
-nnoremap zz za
+" nnoremap zz za
 nnoremap zk zc
 nnoremap zj zo
 nnoremap ze zo
@@ -239,8 +266,8 @@ map <leader>bf :Buffers<CR>
 nnoremap <leader>bb :buffers<cr>:b<space> 
 nnoremap <leader>bd :Bclose<cr>:tabclose<cr>gT
 nnoremap <leader>ba :bufdo bd<cr>
-nnoremap <leader>l :bnext<cr>
-nnoremap <leader>h :bprevious<cr>
+" nnoremap <leader>l :bnext<cr>
+" nnoremap <leader>h :bprevious<cr>
 nnoremap gp <c-o>
 nnoremap gn <c-i>
 
@@ -258,6 +285,8 @@ nnoremap <leader>tM :tabmove -1<cr>
 nnoremap gr gT
 nnoremap gl gt
 nnoremap gh gT
+nnoremap <leader>tl gt
+nnoremap <leader>th gT
 nnoremap <A-l> gt
 nnoremap <A-h> gT
 " Opens a new tab with the current buffer's path

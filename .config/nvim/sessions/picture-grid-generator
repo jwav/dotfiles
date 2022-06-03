@@ -1,0 +1,131 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/dev/picture-grid-extractor
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+argglobal
+%argdel
+$argadd picture-grid-extractor.py
+edit foo.py
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+wincmd _ | wincmd |
+vsplit
+2wincmd h
+wincmd w
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 71 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 70 + 106) / 213)
+exe 'vert 3resize ' . ((&columns * 70 + 106) / 213)
+argglobal
+balt term://~/dev/picture-grid-extractor//10325:/usr/bin/zsh
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 48 - ((39 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 48
+normal! 018|
+wincmd w
+argglobal
+if bufexists("term://~/dev/picture-grid-extractor//10325:/usr/bin/zsh") | buffer term://~/dev/picture-grid-extractor//10325:/usr/bin/zsh | else | edit term://~/dev/picture-grid-extractor//10325:/usr/bin/zsh | endif
+if &buftype ==# 'terminal'
+  silent file term://~/dev/picture-grid-extractor//10325:/usr/bin/zsh
+endif
+balt foo.py
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+let s:l = 51 - ((50 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 51
+normal! 0
+lcd ~/dev/picture-grid-extractor
+wincmd w
+argglobal
+if bufexists("~/dev/picture-grid-extractor/picture-grid-extractor.py") | buffer ~/dev/picture-grid-extractor/picture-grid-extractor.py | else | edit ~/dev/picture-grid-extractor/picture-grid-extractor.py | endif
+if &buftype ==# 'terminal'
+  silent file ~/dev/picture-grid-extractor/picture-grid-extractor.py
+endif
+balt ~/dotfiles/.config/nvim/init.vim
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=2
+setlocal fml=1
+setlocal fdn=2
+setlocal fen
+19
+normal! zo
+42
+normal! zo
+let s:l = 11 - ((10 * winheight(0) + 25) / 51)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 11
+normal! 017|
+lcd ~/dev/picture-grid-extractor
+wincmd w
+exe 'vert 1resize ' . ((&columns * 71 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 70 + 106) / 213)
+exe 'vert 3resize ' . ((&columns * 70 + 106) / 213)
+tabnext 1
+badd +45 ~/dev/picture-grid-extractor/picture-grid-extractor.py
+badd +1 term://~/dev/picture-grid-extractor//10325:/usr/bin/zsh
+badd +691 ~/.local/lib/python3.9/site-packages/jedi/third_party/typeshed/stdlib/3/builtins.pyi
+badd +10 ~/.local/lib/python3.9/site-packages/imagesplit/__init__.py
+badd +1 ~/.local/lib/python3.9/site-packages/imagesplit/utils/__init__.py
+badd +86 ~/.local/lib/python3.9/site-packages/imagesplit/utils/versioning.py
+badd +29 ~/dotfiles/.config/nvim/init.vim
+badd +0 ~/dev/picture-grid-extractor/foo.py
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToOFI
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+set hlsearch
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

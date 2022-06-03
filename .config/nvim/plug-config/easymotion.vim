@@ -6,6 +6,10 @@ let g:EasyMotion_keys = 'fjdkslamrueiwovfj'
 " " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+" map <Leader>l <Plug>(easymotion-lineforward)
+" map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " nmap s <Plug>(easymotion-s2)
 " nmap t <Plug>(easymotion-t2)

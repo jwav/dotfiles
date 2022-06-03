@@ -11,13 +11,7 @@ set shortmess=aoO
 argglobal
 %argdel
 $argadd my_combos.h
-tabnew
-tabnew
-tabnew
-tabnew
-tabnew
-tabrewind
-edit config.h
+edit my_combos.h
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -34,10 +28,10 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 107 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 213)
+exe 'vert 1resize ' . ((&columns * 163 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 49 + 106) / 213)
 argglobal
-balt ~/dotfiles/.config/nvim/mappings.vim
+balt term://~/keymaps/crkbd_jwav//5029:/usr/bin/zsh
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -48,20 +42,18 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 60 - ((33 * winheight(0) + 26) / 53)
+let s:l = 51 - ((24 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 60
-normal! 022|
+keepjumps 51
+normal! 091|
 lcd ~/keymaps/crkbd_jwav
 wincmd w
 argglobal
-if bufexists("~/keymaps/crkbd_jwav/my_combos_definitions.h") | buffer ~/keymaps/crkbd_jwav/my_combos_definitions.h | else | edit ~/keymaps/crkbd_jwav/my_combos_definitions.h | endif
-if &buftype ==# 'terminal'
-  silent file ~/keymaps/crkbd_jwav/my_combos_definitions.h
-endif
-balt ~/dotfiles/.config/nvim/init.vim
+enew
+file ~/keymaps/crkbd_jwav/__Tagbar__.1
+balt term://~/keymaps/crkbd_jwav//5029:/usr/bin/zsh
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -69,275 +61,36 @@ setlocal fdi=#
 setlocal fdl=0
 setlocal fml=1
 setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 3 - ((2 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 3
-normal! 0
+setlocal nofen
 lcd ~/keymaps/crkbd_jwav
 wincmd w
-exe 'vert 1resize ' . ((&columns * 107 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 105 + 106) / 213)
-tabnext
-edit ~/keymaps/crkbd_jwav/foo
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-argglobal
-balt ~/keymaps/crkbd_jwav/my_combos.h
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 03|
-lcd ~/keymaps/crkbd_jwav
-wincmd w
-argglobal
-if bufexists("~/keymaps/crkbd_jwav/my_combos.h") | buffer ~/keymaps/crkbd_jwav/my_combos.h | else | edit ~/keymaps/crkbd_jwav/my_combos.h | endif
-if &buftype ==# 'terminal'
-  silent file ~/keymaps/crkbd_jwav/my_combos.h
-endif
-balt ~/keymaps/crkbd_jwav/config.h
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 212 - ((49 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 212
-normal! 0
-lcd ~/keymaps/crkbd_jwav
-wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-tabnext
-edit ~/keymaps/crkbd_jwav/crkbd_jwav.json
-argglobal
-balt ~/keymaps/crkbd_jwav/crkbd_jwav.json
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 38 - ((7 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 38
-normal! 012|
-lcd ~/keymaps/crkbd_jwav
-tabnext
-edit ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h
-argglobal
-balt ~/keymaps/crkbd_jwav/my_custom_keycodes.h
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 149 - ((44 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 149
-normal! 012|
-lcd ~/keymaps/crkbd_jwav
-tabnext
-edit ~/keymaps/crkbd_jwav/my_homerow_mods.h
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-argglobal
-balt ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 31 - ((30 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 31
-normal! 03|
-lcd ~/keymaps/crkbd_jwav
-wincmd w
-argglobal
-if bufexists("~/keymaps/crkbd_jwav/my_french_keycode_aliases.h") | buffer ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h | else | edit ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h | endif
-if &buftype ==# 'terminal'
-  silent file ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h
-endif
-balt ~/keymaps/crkbd_jwav/my_homerow_mods.h
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 21 - ((20 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 21
-normal! 012|
-lcd ~/keymaps/crkbd_jwav
-wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-tabnext
-edit ~/keymaps/crkbd_jwav/my_combos.h
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd w
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
-wincmd t
-let s:save_winminheight = &winminheight
-let s:save_winminwidth = &winminwidth
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-argglobal
-balt ~/dotfiles/.config/nvim/mappings.vim
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 40 - ((13 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 40
-normal! 025|
-lcd ~/keymaps/crkbd_jwav
-wincmd w
-argglobal
-if bufexists("~/keymaps/crkbd_jwav/config.h") | buffer ~/keymaps/crkbd_jwav/config.h | else | edit ~/keymaps/crkbd_jwav/config.h | endif
-if &buftype ==# 'terminal'
-  silent file ~/keymaps/crkbd_jwav/config.h
-endif
-balt ~/keymaps/crkbd_jwav/my_combos.h
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 65 - ((35 * winheight(0) + 26) / 53)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 65
-normal! 025|
-lcd ~/keymaps/crkbd_jwav
-wincmd w
-exe 'vert 1resize ' . ((&columns * 105 + 106) / 213)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-tabnext 6
-badd +62 ~/keymaps/crkbd_jwav/config.h
-badd +1 ~/keymaps/crkbd_jwav/my_combos.h
-badd +1 ~/keymaps/crkbd_jwav/foo
-badd +1 ~/keymaps/crkbd_jwav/crkbd_jwav.json
-badd +1 ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h
-badd +31 ~/keymaps/crkbd_jwav/my_homerow_mods.h
-badd +239 ~/dotfiles/.config/nvim/mappings.vim
-badd +3 ~/keymaps/crkbd_jwav/my_combos_definitions.h
-badd +1 ~/dotfiles/.config/nvim/init.vim
+exe 'vert 1resize ' . ((&columns * 163 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 49 + 106) / 213)
+tabnext 1
+badd +51 ~/keymaps/crkbd_jwav/my_combos.h
+badd +43 term://~/keymaps/crkbd_jwav//5029:/usr/bin/zsh
+badd +287 ~/keymaps/crkbd_jwav/my_french_keycode_aliases.h
+badd +43 term://~/keymaps/crkbd_jwav//5335:/usr/bin/zsh
 badd +1 ~/keymaps/crkbd_jwav/my_custom_keycodes.h
-badd +18 ~/dotfiles/.config/nvim/plugins.vim
-badd +26 term://~/keymaps/crkbd_jwav//11015:/usr/bin/zsh
+badd +1 ~/keymaps/crkbd_jwav/config.h
+badd +41 ~/dotfiles/.config/nvim/plugins.vim
+badd +1 ~/dotfiles/.config/nvim/init.vim
+badd +1 term://~/keymaps/crkbd_jwav//13117:/usr/bin/zsh
+badd +1 ~/keymaps/crkbd_jwav/my_keypos_aliases.h
+badd +1 ~/keymaps/crkbd_jwav/my_homerow_mods.h
+badd +2 ~/keymaps/crkbd_jwav/keymap.c
+badd +1 ~/keymaps/crkbd_jwav/êêê^
+badd +1 ~/keymaps/crkbd_jwav/flash.sh
+badd +9 ~/dotfiles/.config/nvim/plug-config/easymotion.vim
+badd +38 ~/keymaps/crkbd_jwav/crkbd_jwav.json
+badd +177 ~/dotfiles/.config/nvim/mappings.vim
+badd +3 ~/keymaps/crkbd_jwav/my_combos_definitions.h
+badd +1 ~/keymaps/crkbd_jwav/my_keymap.h
+badd +1 ~/keymaps/crkbd_jwav/foo
+badd +26 term://~/keymaps/crkbd_jwav//12844:/usr/bin/zsh
 badd +1 ~/keymaps/crkbd_jwav/__Tagbar__.3
-badd +4 ~/keymaps/crkbd_jwav/keymap.c
-badd +20 ~/keymaps/crkbd_jwav/my_keymap.h
+badd +1 ~/keymaps/crkbd_jwav/combos.py
+badd +989 term://~/keymaps/crkbd_jwav//12695:/usr/bin/zsh
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif

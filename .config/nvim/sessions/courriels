@@ -3,25 +3,21 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/
+cd ~/entreprenariat
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
 argglobal
 %argdel
-edit courriel-julien-nicolas.txt
+$argadd lettre-thales.txt
+tabnew
+tabnew
+tabrewind
+edit courriel_vernadet.txt
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
-wincmd _ | wincmd |
-vsplit
-1wincmd h
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
-wincmd w
 wincmd _ | wincmd |
 split
 1wincmd k
@@ -36,15 +32,9 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 exe '1resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 1resize ' . ((&columns * 107 + 106) / 213)
 exe '2resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-exe '3resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 3resize ' . ((&columns * 105 + 106) / 213)
-exe '4resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 4resize ' . ((&columns * 105 + 106) / 213)
 argglobal
-balt questions-pour-cci.txt
+balt lettre-thales.txt
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -55,21 +45,21 @@ setlocal fdn=1
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 13) / 26)
+let s:l = 15 - ((7 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 15
 normal! 0
-lcd ~/
+lcd ~/entreprenariat
 wincmd w
 argglobal
-if bufexists("~/questions-pour-cci.txt") | buffer ~/questions-pour-cci.txt | else | edit ~/questions-pour-cci.txt | endif
+if bufexists("~/entreprenariat/lettre-thales.txt") | buffer ~/entreprenariat/lettre-thales.txt | else | edit ~/entreprenariat/lettre-thales.txt | endif
 if &buftype ==# 'terminal'
-  silent file ~/questions-pour-cci.txt
+  silent file ~/entreprenariat/lettre-thales.txt
 endif
-balt ~/courriel-julien-nicolas.txt
-setlocal fdm=manual
+balt ~/entreprenariat/courriel_vernadet.txt
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -77,86 +67,124 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=1
 setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 13) / 26)
+let s:l = 68 - ((2 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 0247|
-lcd ~/
+keepjumps 68
+normal! 099|
+lcd ~/entreprenariat
 wincmd w
-argglobal
-if bufexists("~/courriel-simon.txt") | buffer ~/courriel-simon.txt | else | edit ~/courriel-simon.txt | endif
-if &buftype ==# 'terminal'
-  silent file ~/courriel-simon.txt
-endif
-balt ~/courriel-bruno.txt
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 13) / 26)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-lcd ~/
-wincmd w
-argglobal
-if bufexists("~/courriel-bruno.txt") | buffer ~/courriel-bruno.txt | else | edit ~/courriel-bruno.txt | endif
-if &buftype ==# 'terminal'
-  silent file ~/courriel-bruno.txt
-endif
-balt ~/questions-pour-cci.txx
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=1
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 13) / 26)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-lcd ~/
-wincmd w
-4wincmd w
 exe '1resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 1resize ' . ((&columns * 107 + 106) / 213)
 exe '2resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 2resize ' . ((&columns * 107 + 106) / 213)
-exe '3resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 3resize ' . ((&columns * 105 + 106) / 213)
-exe '4resize ' . ((&lines * 26 + 28) / 57)
-exe 'vert 4resize ' . ((&columns * 105 + 106) / 213)
-tabnext 1
-badd +1 ~/courriel-julien-nicolas.txt
-badd +1 ~/questions-pour-cci.txt
-badd +0 ~/courriel-simon.txt
-badd +22 ~/courriel-bruno.txt
-badd +1 ~/questions-pour-cci.txx
+tabnext
+edit ~/dotfiles/.config/nvim/session-12-avril.txt
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
+argglobal
+balt ~/dotfiles/.config/nvim/mappings.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 49 - ((35 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 49
+normal! 014|
+lcd ~/dotfiles/.config/nvim
+wincmd w
+argglobal
+if bufexists("~/entreprenariat/lettre-thales.txt") | buffer ~/entreprenariat/lettre-thales.txt | else | edit ~/entreprenariat/lettre-thales.txt | endif
+if &buftype ==# 'terminal'
+  silent file ~/entreprenariat/lettre-thales.txt
+endif
+balt ~/dotfiles/.config/nvim/mappings.vim
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 22 - ((21 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 22
+normal! 015|
+lcd ~/entreprenariat
+wincmd w
+exe 'vert 1resize ' . ((&columns * 106 + 106) / 213)
+exe 'vert 2resize ' . ((&columns * 106 + 106) / 213)
+tabnext
+edit ~/entreprenariat/demande-recommandation-cjeannin.txt
+argglobal
+balt ~/entreprenariat/description-malt.txt
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=1
+setlocal fen
+silent! normal! zE
+let &fdl = &fdl
+let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
+lcd ~/entreprenariat
+tabnext 2
+badd +5 ~/entreprenariat/courriel-bruno.txt
+badd +0 ~/entreprenariat/lettre-thales.txt
+badd +224 ~/dotfiles/.config/nvim/mappings.vim
+badd +0 ~/entreprenariat/questions-pour-cci.txt
+badd +19 ~/entreprenariat/description-malt.txt
+badd +9 ~/entreprenariat/session-7-avril.txt
+badd +0 ~/entreprenariat/session-6-avril.txt
+badd +1 ~/entreprenariat/courriel_vernadet.txt
+badd +1 ~/entreprenariat/demande-recommandation-cjeannin.txt
+badd +1 ~/entreprenariat/session-5-avril.txt
+badd +41 ~/dotfiles/.config/nvim/plugins.vim
+badd +1 ~/dotfiles/.config/nvim/session-5-avril.txt
+badd +16 ~/dotfiles/.config/nvim/coc-settings.json
+badd +2 term://~/dotfiles/.config/nvim//10576:/usr/bin/zsh
+badd +0 ~/dotfiles/.config/nvim/session-12-avril.txt
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20 shortmess=filnxtToOFI
-let &winminheight = s:save_winminheight
-let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

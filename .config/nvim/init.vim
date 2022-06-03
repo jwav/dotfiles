@@ -22,9 +22,13 @@ if has('unix')
     colorscheme monokai
     TransparentBackground
     " this enables word navigations within_this_kind_of_name
-    set iskeyword+=_
+    " set iskeyword-=_
+    " this disables word navigations within_this_kind_of_name
+    " set iskeyword+=_
 
     " Plugin Configuration
+    source ~/.config/nvim/plug-config/CamelCaseMotion.vim
+    source ~/.config/nvim/plug-config/todo-vim.vim
     source ~/.config/nvim/plug-config/nerdtree.vim
     source ~/.config/nvim/plug-config/fzf.vim
     source ~/.config/nvim/plug-config/vim-commentary.vim
@@ -33,13 +37,15 @@ if has('unix')
     source ~/.config/nvim/plug-config/which-key.vim
     source ~/.config/nvim/plug-config/coc.vim
     source ~/.config/nvim/plug-config/tagbar.vim
+    source ~/.config/nvim/plug-config/easymotion.vim
+    source ~/.config/nvim/plug-config/sneak.vim
+    source ~/.config/nvim/plug-config/start-screen.vim
+    source ~/.config/nvim/plug-config/far.vim
     " source ~/.config/nvim/plug-config/rnvimr.vim
     "source ~/.config/nvim/plug-config/rainbow.vim
     "source ~/.config/nvim/plug-config/vim-wiki.vim
-    source ~/.config/nvim/plug-config/sneak.vim
     "source ~/.config/nvim/plug-config/goyo.vim
     "source ~/.config/nvim/plug-config/vim-rooter.vim
-    source ~/.config/nvim/plug-config/start-screen.vim
     " source ~/.config/nvim/plug-config/gitgutter.vim
     "source ~/.config/nvim/plug-config/closetags.vim
     "source ~/.config/nvim/plug-config/floaterm.vim
@@ -47,7 +53,6 @@ if has('unix')
     "source ~/.config/nvim/plug-config/vista.vim
     "source ~/.config/nvim/plug-config/xtabline.vim
     "source ~/.config/nvim/plug-config/polyglot.vim
-    source ~/.config/nvim/plug-config/far.vim
     "source ~/.config/nvim/plug-config/tagalong.vim
     "source ~/.config/nvim/plug-config/illuminate.vim
     "source ~/.config/nvim/plug-config/bracey.vim

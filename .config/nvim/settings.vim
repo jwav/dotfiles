@@ -267,3 +267,10 @@ set ffs=unix,dos,mac " Use Unix as the standard file type
 "let &t_EI = '\e[1 q'
 "set guicursor+=n-v-c:blinkon0
 "
+
+" from  https://www.linuxtut.com/en/78efee07f65107dac21b/ . Meant to jump to Python errors
+" augroup ErrorFormat
+"     autocmd BufNewFile,BufRead *.py
+"         \ set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+" augroup END
+

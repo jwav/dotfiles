@@ -9,5 +9,24 @@
 
     "_comment": "set clangd.enabled if it starts acting up",
     "clangd.enabled": false,
-    "clangd.path": "~/scoop/shims/clangd"
+    "clangd.path": "~/scoop/shims/clangd",
+
+
+
+
+
+
+
+"cSpellExt.enableDictionaries": ["french"],
+"cSpell.language": "fr",
+
+
+
+
+
+
+"dummy_last_line": "foobar"
+
+
+
 }

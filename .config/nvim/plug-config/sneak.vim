@@ -1,6 +1,7 @@
 " https://github.com/justinmk/vim-sneak
 
 
+" label mode: a minimalist alternative to easymotion
 let g:sneak#label = 1
 
 " case insensitive sneak
@@ -30,6 +31,8 @@ let g:sneak#prompt = '🔎 '
 " vnoremap <a-s> <Plug>Sneak_s
 nmap <a-s> <Plug>Sneak_s
 vmap <a-s> <Plug>Sneak_s
+nmap s <Plug>Sneak_s
+vmap s <Plug>Sneak_s
 
 " Useful info
 
